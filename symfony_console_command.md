@@ -10,8 +10,8 @@ bin/console debug:container
 bin/console lint:container
 
 docker-compose -f docker-compose.dev.yaml -f docker-compose.dev.alp.yaml up
-docker-compose -f docker-compose.dev.yaml -f docker-compose.dev.alp.yaml exec -T --workdir=/var/www/postamat php vendor/bin/codecept
-docker-compose -f docker-compose.dev.yaml -f docker-compose.dev.alp.yaml exec -T --workdir=/var/www/postamat php composer
+docker-compose -f docker-compose.dev.yaml -f docker-compose.dev.alp.yaml exec -T --workdir=/var/www/ php vendor/bin/codecept
+docker-compose -f docker-compose.dev.yaml -f docker-compose.dev.alp.yaml exec -T --workdir=/var/www/ php composer
 docker-compose -f docker-compose.dev.yaml -f docker-compose.dev.alp.yaml exec postgres pg_restore --clean --if-exists --dbname=orders --no-owner --no-privileges -U user_name -W /tmp/dump.sql
 
 **Наcтройки symfony/messenger**
